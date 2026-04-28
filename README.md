@@ -1,87 +1,78 @@
+# Antd Admin
 
-<p align="center">
-  <a href="http://github.com/zuiidea/antd-admin">
-    <img alt="antd-admin" height="64" src="./docs/_media/logo.svg">
-  </a>
-</p>
+## Introduction
 
-<h1 align="center">AntD Admin</h1>
+Antd Admin provides production-style admin templates with modern frontend tooling, mock-first development, and practical testing coverage.
 
-<div align="center">
+Available templates:
 
-An excellent front-end solution for enterprise applications.
+- `basic`: English-only setup
+- `with-lingui`: Bilingual setup (`en` + `zh`) with Lingui
 
-[![antd](https://img.shields.io/badge/antd-^4.0.0-blue.svg?style=flat-square)](https://github.com/ant-design/ant-design)
-[![umi](https://img.shields.io/badge/umi-^2.2.1-orange.svg?style=flat-square)](https://github.com/umijs/umi)
-[![GitHub issues](https://img.shields.io/github/issues/zuiidea/antd-admin.svg?style=flat-square)](https://github.com/zuiidea/antd-admin/issues)
-[![MIT](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)
-![Travis (.org)](https://img.shields.io/travis/zuiidea/antd-admin.svg)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/zuiidea/antd-admin/pulls)
-[![Gitter](https://img.shields.io/gitter/room/antd-admin/antd-admin.svg)](https://gitter.im/antd-admin/antd-admin)
+Scaffolding CLI:
 
-</div>
+- `init-antd-admin` (from `packages/create`)
 
-- Preview - [https://antd-admin.zuiidea.com](https://antd-admin.zuiidea.com)
-- Documentation - [https://superlbr.gitee.io/antd-admin](https://superlbr.gitee.io/antd-admin)
-- FAQ - [https://doc.antd-admin.zuiidea.com/#/faq](https://doc.antd-admin.zuiidea.com/#/faq)
-- ChangeLog - [https://doc.antd-admin.zuiidea.com/#/change-log](https://doc.antd-admin.zuiidea.com/#/change-log)
+## Key Features
 
-English | [简体中文](./README-zh_CN.md) 
+- JWT login with access/refresh flow
+- Backend-driven menu and permission guards
+- URL-synced table state (pagination, sorting, search)
+- Dark mode theme switching
+- Mock-first local development (no backend required)
+- Typed API boundaries and reusable CRUD patterns
+- React 19 + Ant Design 6 + TanStack Router/Query + Zustand + Zod
+- Optional Lingui-based i18n workflow (`with-lingui`)
+- E2E coverage with Playwright
 
-## Features
+## Quick Start
 
-- Internationalization, extracting translation fields from source code, loading language packs on demand
-- Dynamic permissions, different permissions for different menus
-- Elegant and beautiful, Ant Design system
-- Mock data, local data debugging
+Use `init-antd-admin` to scaffold a standalone app from official templates.
 
-
-## Usage
-
-1. Clone project code.
+### Interactive
 
 ```bash
-git clone https://github.com/zuiidea/antd-admin.git my-project
-cd my-project
+npx init-antd-admin@latest
+pnpm dlx init-antd-admin@latest
+yarn dlx init-antd-admin@latest
+bunx init-antd-admin@latest
 ```
 
-2. Installation dependence.
+### Non-interactive examples
 
 ```bash
-yarn install
+pnpm dlx init-antd-admin@latest my-app --example basic -m pnpm
+pnpm dlx init-antd-admin@latest my-app --example with-lingui --skip-install
 ```
 
-Or
-
-```bash
-npm install
-```
-
-3. Start local server.
-
-```bash
-npm run start
-```
-
-4. After the startup is complete, open a browser and visit [http://localhost:7000](http://localhost:7000), If you need to change the startup port, you can configure it in the `.env` file.
-
-5. For login page, there're two account. Username: admin Password: admin / Username: guest Password: guest
-
-> More instructions at [documentation](https://doc.antd-admin.zuiidea.com)。
+### Common options
 
 
-## Browsers support
+| Option                       | Description                      |
+| ---------------------------- | -------------------------------- |
+| `[project-directory]`        | Target folder                    |
+| `-e, --example <name         | url>`                            |
+| `--example-path <path>`      | Subpath inside remote repository |
+| `-m, --package-manager <pm>` | `npm` / `pnpm` / `yarn` / `bun`  |
+| `--skip-install`             | Skip dependency install          |
+| `--skip-transforms`          | Skip rewrite transforms          |
+| `--no-git`                   | Skip git initialization          |
 
-Modern browsers.
 
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Opera |
-| --------- | --------- | --------- | --------- | --------- | 
-|IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions
+For detailed CLI behavior, see `[packages/create/README.md](./packages/create/README.md)`.
 
-## Contributing
+Production docs: [https://antd-admin-doc.zuiidea.top](https://antd-admin-doc.zuiidea.top)
 
-We very much welcome your contribution, you can build together with us in the following ways :smiley: 
+## Links
 
-- Use Ant Design Pro in your daily work.
-- Submit [GitHub issues](http://github.com/zuiidea/antd-admin/issues)s to report bugs or ask questions.
-- Propose [Pull Request](http://github.com/zuiidea/antd-admin/pulls) to improve our code.
+- [Ant Design](https://github.com/ant-design/ant-design)
+- [React](https://react.dev)
+- [Vite+](https://viteplus.dev)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Issues](https://github.com/zuiidea/antd-admin/issues)
+- [Stars](https://github.com/zuiidea/antd-admin/stargazers)
+- [PRs Welcome](https://github.com/zuiidea/antd-admin/pulls)
+
+## License
+
+MIT
